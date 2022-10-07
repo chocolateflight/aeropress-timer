@@ -1,15 +1,15 @@
 /* Variables */
 :root {
   /* colors */
-  --primary-100: #ccf0ea;
-  --primary-200: #99e0d5;
-  --primary-300: #66d1bf;
-  --primary-400: #33c1aa;
-  --primary-500: #00b295; /* primary color */
-  --primary-600: #008e77;
-  --primary-700: #006b59;
-  --primary-800: #00473c;
-  --primary-900: #00241e;
+  --primary-100: #d3d7d9;
+  --primary-200: #a7afb4;
+  --primary-300: #7a888e;
+  --primary-400: #4e6069;
+  --primary-500: #223843; /* primary color */
+  --primary-600: #1b2d36;
+  --primary-700: #142228;
+  --primary-800: #0e161b;
+  --primary-900: #070b0d;
 
   /* grey */
   --grey-50: #f8fafc;

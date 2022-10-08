@@ -1,10 +1,11 @@
 import MobileNavbar from './assets/components/layout/MobileNavbar';
+import Timer from './assets/components/ui/Timer';
 
 function App() {
   return (
-    <div>
+    <div className='main'>
       <MobileNavbar />
-      <h1>Hello World</h1>
+      <Timer />
     </div>
   );
 }

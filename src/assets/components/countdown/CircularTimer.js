@@ -1,9 +1,13 @@
-import React from 'react'
+import React from 'react';
+
 
 function CircularTimer() {
+
   return (
-    <div>CircularTimer</div>
-  )
+    <div>
+      Circular Timer
+    </div>
+  );
 }
 
-export default CircularTimer
+export default CircularTimer;

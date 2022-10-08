@@ -16,6 +16,7 @@ html {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 2rem;
 }
 
 /* Main Structure */
@@ -34,6 +35,7 @@ p {
   margin-bottom: 1.5rem;
   max-width: 40em;
 }
+
 
 /* Headings */
 

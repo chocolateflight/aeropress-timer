@@ -33,7 +33,7 @@
 
   /* Named Colors */
   --backgroundColor: var(--primary-500);
-  --textColor: var(--grey-900);
+  --textColor: #DDC7CB;
 
   /* fonts */
   --headingFont: 'Roboto', sans-serif;

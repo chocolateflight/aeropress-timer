@@ -16,6 +16,10 @@ const Wrapper = styled.div`
     font-size: 2rem;
     gap: 2rem;
   }
+
+  a {
+    color: var(--primary-500)
+  }
 `;
 
 // functions

@@ -30,13 +30,19 @@ function NumericTimer(props) {
     }
 
     return () => clearInterval(interval);
-  }, [props.isPause]);
+  });
+
+  function displayTimer() {
+    if (time > 0) {
+      return `${Math.floor(time / 60)}:${time % 60 < 10 ? '0' : ''}${time % 60}`;
+    } else {
+      return 'Finished!';
+    }
+  }
 
   return (
     <Wrapper>
-      <div className='numerictimer'>{`${Math.floor(time / 60)}:${
-        time % 60 < 10 ? '0' : ''
-      }${time % 60}`}</div>
+      <div className='numerictimer'>{displayTimer()}</div>
     </Wrapper>
   );
 }

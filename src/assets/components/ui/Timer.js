@@ -14,12 +14,18 @@ const Wrapper = styled.div`
 
 function Timer() {
 
+  const [timerOn, setTimerOn] = useState(false);
+
+  function onPause() {
+    setTimerOn(!timerOn)
+  }
+
   return (
     <Wrapper>
       <div className='flex-col-cen timercontainer'>
-        <NumericTimer/>
+        <NumericTimer isPause={timerOn}/>
         <CircularTimer/>
-        <div>Pause</div>
+        <div onClick={onPause}>{timerOn ? "Pause" : "Start"}</div>
       </div>
     </Wrapper>
   );

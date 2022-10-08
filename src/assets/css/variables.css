@@ -32,7 +32,7 @@
   --green-dark: #0f5132;
 
   /* Named Colors */
-  --backgroundColor: var(--grey-50);
+  --backgroundColor: var(--primary-500);
   --textColor: var(--grey-900);
 
   /* fonts */

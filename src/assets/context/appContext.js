@@ -1,19 +1,18 @@
 import React, { useState, useContext } from 'react';
+import recipes from '../recipes/Recipes';
 
-const initialState = {
-  selectedRecipe: 1
-};
+const initialState = recipes[1];
 
 const AppContext = React.createContext();
 
 const AppProvider = ({ children }) => {
-  const [state, setState] = useState(initialState);
+  const [selectedRecipe, setSelectedRecipe] = useState(initialState);
 
   function selectRecipe(recipe) {
-    setState(recipe)
+    setSelectedRecipe(recipes[recipe])
   }
 
-  return <AppContext.Provider value={{ ...state, selectRecipe }}>{children}</AppContext.Provider>;
+  return <AppContext.Provider value={{ ...selectedRecipe, selectRecipe }}>{children}</AppContext.Provider>;
 };
 
 const useAppContext = () => {

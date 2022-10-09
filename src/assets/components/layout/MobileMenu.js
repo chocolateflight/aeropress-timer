@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import styled from 'styled-components';
 import { useAppContext } from '../../context/appContext';
 
@@ -36,35 +36,35 @@ const Wrapper = styled.div`
 // functions
 function MobileMenu(props) {
   const { selectRecipe } = useAppContext();
+  const [highlightRecipe, setHighlightRecipe] = useState(1)
 
   function selectionHandler(e) {
-    selectRecipe({
-      selectedRecipe: +e.target.id,
-    });
+    setHighlightRecipe(+e.target.id)
+
+    selectRecipe(+e.target.id);
   }
 
-  const selectedRecipe = useAppContext()['selectedRecipe'];
 
   return (
     <Wrapper>
       <div className={`mobilemenu ${props.class}`}>
         <span
           id='1'
-          className={selectedRecipe === 1 ? 'selected' : ''}
+          className={highlightRecipe === 1 ? 'selected' : ''}
           onClick={selectionHandler}
         >
           Recipe 1
         </span>
         <span
           id='2'
-          className={selectedRecipe === 2 ? 'selected' : ''}
+          className={highlightRecipe === 2 ? 'selected' : ''}
           onClick={selectionHandler}
         >
           Recipe 2
         </span>
         <span
           id='3'
-          className={selectedRecipe === 3 ? 'selected' : ''}
+          className={highlightRecipe === 3 ? 'selected' : ''}
           onClick={selectionHandler}
         >
           Recipe 3

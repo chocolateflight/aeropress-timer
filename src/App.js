@@ -3,10 +3,10 @@ import Timer from './assets/components/ui/Timer';
 
 function App() {
   return (
-    <div className='main'>
-      <MobileNavbar />
-      <Timer />
-    </div>
+      <div className='main'>
+        <MobileNavbar />
+        <Timer />
+      </div>
   );
 }
 

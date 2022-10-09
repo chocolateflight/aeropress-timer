@@ -39,9 +39,9 @@ function MobileMenu(props) {
   const [highlightRecipe, setHighlightRecipe] = useState(1)
 
   function selectionHandler(e) {
-    setHighlightRecipe(+e.target.id)
-
+    setHighlightRecipe(+e.target.id);
     selectRecipe(+e.target.id);
+    props.stateChanger()
   }
 
 

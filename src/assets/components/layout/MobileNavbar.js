@@ -55,7 +55,7 @@ function MobileNavbar() {
           onClick={showMenuHandler}
         />
       </nav>
-      <MobileMenu class={showMenu ? 'animate' : ''} />
+      <MobileMenu class={showMenu ? 'animate' : ''} stateChanger={showMenuHandler} />
       {/* {showMenu && <MobileMenu/>} */}
     </Wrapper>
   );

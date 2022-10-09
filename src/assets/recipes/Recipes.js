@@ -43,15 +43,15 @@ const recipes = {
     author: 'Autor 3 Name',
     steps: {
       1: {
-        duration: 5,
+        duration: 3,
         description: 'Do step 1',
       },
       2: {
-        duration: 15,
+        duration: 3,
         description: 'Do step 2',
       },
       3: {
-        duration: 1,
+        duration: 3,
         description: 'Do step 3',
       },
     },

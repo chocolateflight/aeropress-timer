@@ -14,12 +14,12 @@ const Wrapper = styled.div`
 `;
 
 
-function CircularTimer() {
+function CircularTimer(props) {
 
   return (
     <Wrapper>
     <div className='circulartimer'>
-      <small>Stir back and forward 3 times</small>
+      <small>{props.description}</small>
     </div>
     </Wrapper>
   );

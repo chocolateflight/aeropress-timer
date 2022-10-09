@@ -4,29 +4,35 @@ import styled from 'styled-components';
 // styled component
 const Wrapper = styled.div`
   .mobilemenu {
-    background-color: rgba(211, 215, 217, 0.4);
-    backdrop-filter: blur(4px);
-    height: 100%;
-    width: 100%;
-    position: fixed;
-    padding: 1rem;
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-size: 2rem;
     gap: 2rem;
+    position: fixed;
+    left: -800px;
+    height: 100%;
+    width: 100%;
+    padding: 1rem;
+    background-color: rgba(211, 215, 217, 0.4);
+    backdrop-filter: blur(4px);
+    font-size: 2rem;
+    transition: ease 0.2s all;
   }
 
   a {
-    color: var(--primary-500)
+    color: var(--primary-500);
+  }
+
+  .animate {
+    transform: translate3d(800px, 0, 0);
   }
 `;
 
 // functions
-function MobileMenu() {
+function MobileMenu(props) {
   return (
     <Wrapper>
-      <div className='mobilemenu'>
+      <div className={`mobilemenu ${props.class}`}>
         <a href='#'>Recipe 1</a>
         <a href='#'>Recipe 2</a>
         <a href='#'>Recipe 3</a>

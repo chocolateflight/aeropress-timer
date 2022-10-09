@@ -28,7 +28,7 @@ const Wrapper = styled.nav`
     transform: scale(0.9);
   }
 
-  @media screen and (min-width: 600px){
+  @media screen and (min-width: 600px) {
     .mobilenav {
       display: none;
     }
@@ -55,7 +55,8 @@ function MobileNavbar() {
           onClick={showMenuHandler}
         />
       </nav>
-      {showMenu && <MobileMenu/>}
+      <MobileMenu class={showMenu ? 'animate' : ''} />
+      {/* {showMenu && <MobileMenu/>} */}
     </Wrapper>
   );
 }

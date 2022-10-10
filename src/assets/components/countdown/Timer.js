@@ -56,10 +56,10 @@ function Timer() {
     let newEl = totalDuration - a;
     a = a + el;
     return newEl;
-  }); 
+  });
 
   // functions
-   // controls whether timer is on or not
+  // controls whether timer is on or not
   const [timerOn, setTimerOn] = useState(false);
 
   // controls the remaining time of the recipe
@@ -71,6 +71,9 @@ function Timer() {
   // controls the position of the recipe in the descriptionArray and remainingDurationArray
   const [index, setIndex] = useState(1);
 
+  // controls the reset of the circular timer
+  const [isReset, setIsReset] = useState(false);
+
   function play() {
     const audio = new Audio(ding);
     audio.play();
@@ -80,9 +83,9 @@ function Timer() {
   useEffect(() => {
     setTask('Welcome to the AeroPress Timer!');
     setTime(totalDuration);
-    setTimerOn(false); 
-  }, [totalDuration]); 
-
+    setTimerOn(false);
+    setIsReset(isReset => !isReset)
+  }, [totalDuration]);
 
   // actual countdown
   useEffect(() => {
@@ -96,7 +99,8 @@ function Timer() {
           setTask('Enjoy your coffee!');
           clearInterval(interval);
         } else {
-          if (remainingDurationArray[index] === time - 1) {//checks if time for next step
+          if (remainingDurationArray[index] === time - 1) {
+            //checks if time for next step
             play(); // plays sound
             setTask(descriptionArray[index]); // updates active step
             setIndex(index + 1); // moves index up by one
@@ -115,15 +119,19 @@ function Timer() {
   }, [timerOn, time, remainingDurationArray, index, descriptionArray]);
 
   function onPause() {
-    if (timerOn && time <= 0) { // reset button
+    if (timerOn && time <= 0) {
+      // reset button
       setTime(totalDuration);
       setTimerOn(!timerOn);
       setIndex(0);
       setTask('Welcome to the AeroPress Timer!');
-    } else if (time === totalDuration) { // start button
+      setIsReset(!isReset);
+    } else if (time === totalDuration) {
+      // start button
       setTask(descriptionArray[0]);
       setTimerOn(!timerOn);
-    } else { // pause button
+    } else {
+      // pause button
       setTimerOn(!timerOn);
     }
   }
@@ -132,7 +140,12 @@ function Timer() {
     <Wrapper>
       <div className='flex-col-cen timercontainer'>
         <NumericTimer time={time} />
-        <CircularTimer time={time} description={task} />
+        <CircularTimer
+          totalDuration={totalDuration}
+          reset={isReset}
+          isPlaying={timerOn}
+          description={task}
+        />
         <img
           className='icon'
           src={!timerOn && time > 0 ? start : timerOn && time <= 0 ? reset : pause}

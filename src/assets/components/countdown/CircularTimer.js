@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { CountdownCircleTimer } from 'react-countdown-circle-timer';
 
 /*
 Responsibility:
@@ -12,18 +13,22 @@ Description:
 
 const Wrapper = styled.div`
   .circulartimer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 20rem;
-    aspect-ratio: 1/1;
-    border: 20px solid red;
-    border-radius: 50%
+    position: relative;
+    z-index: -10;
+    border-radius: 50%;
   }
 
   .description {
-    width: 80%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     text-align: center;
+    font-size: 0.9rem;
+  }
+
+  .test {
+    color: blue;
   }
 `;
 
@@ -32,9 +37,21 @@ function CircularTimer(props) {
 
   return (
     <Wrapper>
-    <div className='circulartimer'>
+      <div className="circulartimer">
+      <CountdownCircleTimer
+        className="test"
+        key={props.reset}
+        isPlaying={props.isPlaying}
+        duration={props.totalDuration}
+        colors={'#842029'}
+        trailColor={"#DDC7CB"}
+        size="320"
+        strokeWidth="20"
+        rotation={'counterclockwise'}
+      >
+      </CountdownCircleTimer>
       <small className='description'>{props.description}</small>
-    </div>
+      </div>
     </Wrapper>
   );
 }

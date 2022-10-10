@@ -45,7 +45,7 @@ function CircularTimer(props) {
         duration={props.totalDuration}
         colors={'#DDC7CB'}
         trailColor={"#142228"}
-        size="320"
+        size="300"
         strokeWidth="20"
         rotation={'counterclockwise'}
       >

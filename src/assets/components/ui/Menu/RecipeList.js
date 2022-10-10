@@ -22,9 +22,8 @@ function RecipeList() {
   return (
     <div>
       {recipes.map((el) => (
-        <div>
+        <div key={Math.random()}>
           <span
-            key={el.name}
             id={el.id}
             className={highlightRecipe === el.id ? 'coffeename selected' : 'coffeename'}
             onClick={selectionHandler}
@@ -34,6 +33,7 @@ function RecipeList() {
           <span
             className={highlightRecipe === el.id ? 'coffeedesc selected' : 'coffeedesc'}
           >
+            <small>{`Author: ${el.author}`}</small>
             <small>{`Method: ${el.setup.method}`}</small>
             <small>{`Coffee: ${el.setup.beans}`}</small>
             <small>{`Water: ${el.setup.water}`}</small>

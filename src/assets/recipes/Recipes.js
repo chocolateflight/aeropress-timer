@@ -98,6 +98,34 @@ const recipes = [
         description: 'Add additional hot water to the cup until you like it',
       },
     },
+  },
+  {
+    id: 3,
+    name: 'Test Name',
+    author: 'Test Author',
+    setup: {
+      method: "Test Method",
+      beans: "Test Beans",
+      water: "Test Water"
+    },
+    steps: {
+      1: {
+        duration: 5,
+        description: 'Test Description 1',
+      },
+      2: {
+        duration: 5,
+        description: 'Test Description 2',
+      },
+      3: {
+        duration: 5,
+        description: 'Test Description 3',
+      },
+      4: {
+        duration: 5,
+        description: 'Test Description 4',
+      },
+    },
   }
 ];
 

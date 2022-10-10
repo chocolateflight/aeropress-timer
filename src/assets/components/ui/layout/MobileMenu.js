@@ -15,24 +15,41 @@ const Wrapper = styled.div`
     width: 100%;
     padding: 1rem;
     background-color: rgba(211, 215, 217, 0.4);
-    backdrop-filter: blur(4px);
+    backdrop-filter: blur(20px);
     font-size: 1.7rem;
     transition: ease 0.2s all;
   }
 
-  span {
+  .coffeename {
     color: var(--primary-500);
     display: block;
     text-align: center;
+    margin-top: 1rem;
+  }
+
+  .coffeename.selected {
+    color: var(--green-light);
+  }
+
+  .coffeedesc {
+    color: var(--primary-500);
+    display: none;
+    
+  }
+
+  .coffeedesc.selected {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    color: var(--green-light);
+    text-align: left
   }
 
   .animate {
     transform: translate3d(800px, 0, 0);
   }
 
-  .selected {
-    color: var(--green-light);
-  }
+
 `;
 
 // functions

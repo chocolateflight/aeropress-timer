@@ -20,6 +20,10 @@ const Wrapper = styled.div`
       color: var(--textColor);
     }
 
+    .coffeename:hover{
+      cursor: pointer;
+    }
+
     .coffeedesc {
       display: none;
       font-size: 1.2rem;

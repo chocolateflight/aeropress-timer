@@ -36,6 +36,10 @@ const Wrapper = styled.div`
       margin-top: 1rem;
     }
 
+    .coffeename:hover{
+      cursor: pointer;
+    }
+
     .coffeename.selected {
       color: var(--green-light);
     }
@@ -43,7 +47,6 @@ const Wrapper = styled.div`
     .coffeedesc {
       color: var(--primary-500);
       display: none;
-      
     }
 
     .coffeedesc.selected {

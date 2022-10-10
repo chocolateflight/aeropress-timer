@@ -48,9 +48,10 @@ function Timer() {
   const [timerOn, setTimerOn] = useState(false);
   const [time, setTime] = useState(totalDuration);
   const [task, setTask] = useState('Welcome to the AeroPress Timer!');
-  const [index, setIndex] = useState(0);
+  const [index, setIndex] = useState(1);
 
   useEffect(() => {
+    setTask('Welcome to the AeroPress Timer!');
     setTime(totalDuration);
     setTimerOn(false);
   }, [totalDuration]);
@@ -66,7 +67,7 @@ function Timer() {
           setTask('Enjoy your coffee!');
           clearInterval(interval);
         } else {
-          if (remainingDurationArray[index] === time) {
+          if (remainingDurationArray[index] === time-1) {
             console.log(remainingDurationArray[index]);
             setTask(descriptionArray[index]);
             setIndex(index + 1);
@@ -90,6 +91,9 @@ function Timer() {
       setTimerOn(!timerOn);
       setIndex(0);
       setTask('Welcome to the AeroPress Timer!');
+    } else if (time === totalDuration) {
+      setTask(descriptionArray[0]);
+      setTimerOn(!timerOn);
     } else {
       setTimerOn(!timerOn);
     }
@@ -100,7 +104,12 @@ function Timer() {
       <div className='flex-col-cen timercontainer'>
         <NumericTimer time={time} timerInformation={timerInformation} />
         <CircularTimer time={time} description={task} />
-        <img className="icon" src={!timerOn && time > 0 ? start : timerOn && time <= 0 ? reset : pause} alt="" onClick={onPause} />
+        <img
+          className='icon'
+          src={!timerOn && time > 0 ? start : timerOn && time <= 0 ? reset : pause}
+          alt=''
+          onClick={onPause}
+        />
       </div>
     </Wrapper>
   );

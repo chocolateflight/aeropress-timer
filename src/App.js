@@ -1,5 +1,5 @@
 import MobileNavbar from './assets/components/layout/MobileNavbar';
-import Timer from './assets/components/ui/Timer';
+import Timer from './assets/components/countdown/Timer';
 
 function App() {
   return (

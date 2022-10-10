@@ -5,8 +5,8 @@ import styled from 'styled-components';
 import pause from '../../img/pause.png';
 import start from '../../img/start.png';
 import reset from '../../img/reset.png';
-import NumericTimer from '../countdown/NumericTimer';
-import CircularTimer from '../countdown/CircularTimer';
+import NumericTimer from './NumericTimer';
+import CircularTimer from './CircularTimer';
 
 // styled component
 const Wrapper = styled.div`
@@ -22,7 +22,6 @@ const Wrapper = styled.div`
 function Timer() {
   // variables
   const selectedRecipe = useAppContext();
-  const stepsArray = Object.values(selectedRecipe.steps);
   const durationArray = Object.values(selectedRecipe.steps).map((val) => val.duration);
   const descriptionArray = Object.values(selectedRecipe.steps).map(
     (val) => val.description
@@ -36,15 +35,8 @@ function Timer() {
     return newEl;
   });
 
-  const timerInformation = {
-    stepsArray,
-    durationArray,
-    descriptionArray,
-    totalDuration,
-  };
 
   // functions
-
   const [timerOn, setTimerOn] = useState(false);
   const [time, setTime] = useState(totalDuration);
   const [task, setTask] = useState('Welcome to the AeroPress Timer!');
@@ -82,7 +74,7 @@ function Timer() {
     }
 
     return () => clearInterval(interval);
-  });
+  }, [timerOn, time, remainingDurationArray, index, descriptionArray]);
 
   function onPause() {
     if (timerOn && time <= 0) {
@@ -101,7 +93,7 @@ function Timer() {
   return (
     <Wrapper>
       <div className='flex-col-cen timercontainer'>
-        <NumericTimer time={time} timerInformation={timerInformation} />
+        <NumericTimer time={time} />
         <CircularTimer time={time} description={task} />
         <img
           className='icon'

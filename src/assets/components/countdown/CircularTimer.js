@@ -1,6 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
 
+/*
+Responsibility:
+- Displays Circular Timer
+- Displays Active Step
+
+Description:
+- Receives the description props from Timer.js and displays it.
+*/
+
 const Wrapper = styled.div`
   .circulartimer {
     display: flex;

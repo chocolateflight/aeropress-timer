@@ -2,6 +2,15 @@ import React from 'react';
 import styled from 'styled-components';
 import RecipeList from '../Menu/RecipeList';
 
+/*
+Responsibility:
+- Displays a Menu on Mobile devices
+
+Description:
+- Receives a prop from the Navbar that updates a class
+- Class controls that component only shows when opened from navbar
+*/
+
 // styled component
 const Wrapper = styled.div`
   .mobilemenu {

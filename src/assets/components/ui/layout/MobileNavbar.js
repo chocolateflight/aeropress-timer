@@ -5,8 +5,13 @@ import MobileMenu from './MobileMenu';
 import logo from '../../../img/logo.png';
 import hamburger from '../../../img/hamburger-menu-icon.png';
 
-// styled component
+/*
+Responsibility:
+- Displays a Navbar on Mobile devices
+- Sends a prop to MobileMenu.js to indicate whether menu is open or not
+*/
 
+// styled component
 const Wrapper = styled.nav`
   .mobilenav {
     margin: 0 1rem 1rem 1rem;

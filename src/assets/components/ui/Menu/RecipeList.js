@@ -2,6 +2,15 @@ import React, { useState } from 'react';
 import { useAppContext } from '../../../context/appContext';
 import recipes from '../../../recipes/Recipes';
 
+/*
+Responsibility:
+- Displays a list of all recipes in the menu
+
+Description:
+- The Recipe name is always showing
+- Detailed information only show up when recipe is selected
+*/
+
 function RecipeList() {
   const { selectRecipe } = useAppContext();
   const [highlightRecipe, setHighlightRecipe] = useState(0);

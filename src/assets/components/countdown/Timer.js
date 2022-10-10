@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import pause from '../../img/pause.png';
 import start from '../../img/start.png';
 import reset from '../../img/reset.png';
+import ding from "../../sounds/din-ding.mp3"
 import NumericTimer from './NumericTimer';
 import CircularTimer from './CircularTimer';
 
@@ -27,7 +28,6 @@ function Timer() {
     (val) => val.description
   );
   const totalDuration = durationArray.reduce((partialSum, a) => partialSum + a, 0);
-
   let a = 0;
   const remainingDurationArray = durationArray.map((el) => {
     let newEl = totalDuration - a;
@@ -36,11 +36,17 @@ function Timer() {
   });
 
 
+
   // functions
   const [timerOn, setTimerOn] = useState(false);
   const [time, setTime] = useState(totalDuration);
   const [task, setTask] = useState('Welcome to the AeroPress Timer!');
   const [index, setIndex] = useState(1);
+
+  function play() {
+    const audio = new Audio(ding);
+    audio.play();
+  }
 
   useEffect(() => {
     setTask('Welcome to the AeroPress Timer!');
@@ -59,7 +65,10 @@ function Timer() {
           setTask('Enjoy your coffee!');
           clearInterval(interval);
         } else {
+          console.log(remainingDurationArray[index])
+          console.log(index)
           if (remainingDurationArray[index] === time-1) {
+            play();
             setTask(descriptionArray[index]);
             setIndex(index + 1);
           }

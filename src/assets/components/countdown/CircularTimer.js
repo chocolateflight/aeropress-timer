@@ -11,6 +11,11 @@ const Wrapper = styled.div`
     border: 20px solid red;
     border-radius: 50%
   }
+
+  .description {
+    width: 80%;
+    text-align: center;
+  }
 `;
 
 
@@ -19,7 +24,7 @@ function CircularTimer(props) {
   return (
     <Wrapper>
     <div className='circulartimer'>
-      <small>{props.description}</small>
+      <small className='description'>{props.description}</small>
     </div>
     </Wrapper>
   );

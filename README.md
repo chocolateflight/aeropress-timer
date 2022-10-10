@@ -1,3 +1,8 @@
+THIS PROJECT IS CURRENTLY WORK IN PROGRESS <br>
+THIS IS A NON-COMMERCIAL TRAINING PROJECT
+============
+
+
 # Aeropress Timer
 
 Hello, and welcome to the Aeropress Timer! This is a React Training Project on my journey to learn web development. My goal with this project was to combine as much of what I've already learned about HTML, CSS, JavaScript, and React into one project. This is a front-end project, without its own back-end. 

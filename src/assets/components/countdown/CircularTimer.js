@@ -43,8 +43,8 @@ function CircularTimer(props) {
         key={props.reset}
         isPlaying={props.isPlaying}
         duration={props.totalDuration}
-        colors={'#842029'}
-        trailColor={"#DDC7CB"}
+        colors={'#DDC7CB'}
+        trailColor={"#142228"}
         size="320"
         strokeWidth="20"
         rotation={'counterclockwise'}

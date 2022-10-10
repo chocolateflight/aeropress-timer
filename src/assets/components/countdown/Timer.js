@@ -84,7 +84,7 @@ function Timer() {
     setTask('Welcome to the AeroPress Timer!');
     setTime(totalDuration);
     setTimerOn(false);
-    setIsReset(isReset => !isReset)
+    setIsReset((isReset) => !isReset);
   }, [totalDuration]);
 
   // actual countdown
@@ -105,6 +105,7 @@ function Timer() {
             setTask(descriptionArray[index]); // updates active step
             setIndex(index + 1); // moves index up by one
           }
+
           setTime((prevTime) => prevTime - 1); // updates time
         }
       }, 1000);
@@ -123,7 +124,7 @@ function Timer() {
       // reset button
       setTime(totalDuration);
       setTimerOn(!timerOn);
-      setIndex(0);
+      setIndex(1);
       setTask('Welcome to the AeroPress Timer!');
       setIsReset(!isReset);
     } else if (time === totalDuration) {

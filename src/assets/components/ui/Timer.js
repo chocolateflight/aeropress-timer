@@ -68,7 +68,6 @@ function Timer() {
           clearInterval(interval);
         } else {
           if (remainingDurationArray[index] === time-1) {
-            console.log(remainingDurationArray[index]);
             setTask(descriptionArray[index]);
             setIndex(index + 1);
           }

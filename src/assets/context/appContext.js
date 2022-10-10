@@ -1,7 +1,7 @@
 import React, { useState, useContext } from 'react';
 import recipes from '../recipes/Recipes';
 
-const initialState = recipes[1];
+const initialState = recipes[0];
 
 const AppContext = React.createContext();
 

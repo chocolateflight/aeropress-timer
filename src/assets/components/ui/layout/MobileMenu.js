@@ -19,7 +19,7 @@ const Wrapper = styled.div`
     align-items: center;
     gap: 2rem;
     position: fixed;
-    left: -800px;
+    left: -1000px;
     height: 100%;
     width: 100%;
     padding: 1rem;
@@ -29,33 +29,39 @@ const Wrapper = styled.div`
     transition: ease 0.2s all;
   }
 
-  .coffeename {
-    color: var(--primary-500);
-    display: block;
-    text-align: center;
-    margin-top: 1rem;
-  }
+    .coffeename {
+      color: var(--primary-500);
+      display: block;
+      text-align: center;
+      margin-top: 1rem;
+    }
 
-  .coffeename.selected {
-    color: var(--green-light);
-  }
+    .coffeename.selected {
+      color: var(--green-light);
+    }
 
-  .coffeedesc {
-    color: var(--primary-500);
-    display: none;
-    
-  }
+    .coffeedesc {
+      color: var(--primary-500);
+      display: none;
+      
+    }
 
-  .coffeedesc.selected {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    color: var(--green-light);
-    text-align: left
-  }
+    .coffeedesc.selected {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      color: var(--green-light);
+      text-align: left
+    }
 
   .animate {
-    transform: translate3d(800px, 0, 0);
+    transform: translate3d(1000px, 0, 0);
+  }
+
+  @media screen and (min-width: 900px) {
+    .mobilemenu {
+      display: none;
+    }
   }
 
 

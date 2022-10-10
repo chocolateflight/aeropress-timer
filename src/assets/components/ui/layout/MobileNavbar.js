@@ -33,7 +33,7 @@ const Wrapper = styled.nav`
     transform: scale(0.9);
   }
 
-  @media screen and (min-width: 600px) {
+  @media screen and (min-width: 900px) {
     .mobilenav {
       display: none;
     }

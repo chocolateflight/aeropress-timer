@@ -20,3 +20,7 @@ The CSS starter code was created following a video tutorial of [Coding Addict](h
 
 ### `Normalize.css`
 This code includes the CSS Reset [Normalize.css](https://necolas.github.io/normalize.css/).
+
+-----
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/fbd2c498-4f0f-463f-9f17-099a8a995546/deploy-status)](https://app.netlify.com/sites/chocolateflight-aeropress-timer/deploys)

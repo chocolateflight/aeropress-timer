@@ -1,6 +1,6 @@
-import MobileNavbar from './assets/components//ui/layout/MobileNavbar';
-import Timer from './assets/components/countdown/Timer';
-import MainMenu from './assets/components/ui/layout/MainMenu';
+import MobileNavbar from './components//ui/layout/MobileNavbar';
+import Timer from './components/countdown/Timer';
+import MainMenu from './components/ui/layout/MainMenu';
 import styled from 'styled-components';
 
 const Wrapper = styled.div`

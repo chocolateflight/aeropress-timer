@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react';
-import recipes from '../recipes/Recipes';
+import recipes from '../assets/recipes/Recipes';
 
 /*
 Responsibility:

@@ -5,7 +5,7 @@ import './assets/css/roboto-font.css';
 import './assets/css/variables.css';
 import './assets/css/style.css';
 import App from './App';
-import { AppProvider } from './assets/context/appContext';
+import { AppProvider } from './context/appContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

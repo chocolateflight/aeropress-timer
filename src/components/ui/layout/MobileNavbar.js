@@ -2,8 +2,8 @@ import React from 'react';
 import { useState } from 'react';
 import styled from 'styled-components';
 import MobileMenu from './MobileMenu';
-import logo from '../../../img/logo.png';
-import hamburger from '../../../img/hamburger-menu-icon.png';
+import logo from '../../../assets/img/logo.png';
+import hamburger from '../../../assets/img/hamburger-menu-icon.png';
 
 /*
 Responsibility:
@@ -61,7 +61,6 @@ function MobileNavbar() {
         />
       </nav>
       <MobileMenu class={showMenu ? 'animate' : ''} stateChanger={showMenuHandler} />
-      {/* {showMenu && <MobileMenu/>} */}
     </Wrapper>
   );
 }

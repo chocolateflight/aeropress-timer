@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useAppContext } from '../../../context/appContext';
-import recipes from '../../../recipes/Recipes';
+import recipes from '../../../assets/recipes/Recipes';
 
 /*
 Responsibility:

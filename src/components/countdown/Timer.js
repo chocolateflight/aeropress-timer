@@ -2,10 +2,10 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import { useAppContext } from '../../context/appContext';
 import styled from 'styled-components';
-import pause from '../../img/pause.png';
-import start from '../../img/start.png';
-import reset from '../../img/reset.png';
-import ding from '../../sounds/din-ding.mp3';
+import pause from '../../assets/img/pause.png';
+import start from '../../assets/img/start.png';
+import reset from '../../assets/img/reset.png';
+import ding from '../../assets/sounds/din-ding.mp3';
 import NumericTimer from './NumericTimer';
 import CircularTimer from './CircularTimer';
 
@@ -36,21 +36,13 @@ const Wrapper = styled.div`
 
 function Timer() {
   // variables
-  // accesses currently selected recipe from global context
   const selectedRecipe = useAppContext();
-
-  // extracts all durations from the steps and stores them in an array
   const durationArray = Object.values(selectedRecipe.steps).map((val) => val.duration);
-
-  // extracts all descriptions from the steps and stores them in an array
   const descriptionArray = Object.values(selectedRecipe.steps).map(
     (val) => val.description
   );
-
-  // calculates the total duration of the recipe by adding together all values in the duration array
   const totalDuration = durationArray.reduce((partialSum, a) => partialSum + a, 0);
 
-  // calculates the remaining duration after each step
   let a = 0;
   const remainingDurationArray = durationArray.map((el) => {
     let newEl = totalDuration - a;
@@ -79,7 +71,6 @@ function Timer() {
     audio.play();
   }
 
-  // resets the component once a new recipe is selected from the list
   useEffect(() => {
     setTask('Welcome to the AeroPress Timer!');
     setTime(totalDuration);
@@ -100,13 +91,11 @@ function Timer() {
           clearInterval(interval);
         } else {
           if (remainingDurationArray[index] === time - 1) {
-            //checks if time for next step
-            play(); // plays sound
-            setTask(descriptionArray[index]); // updates active step
-            setIndex(index + 1); // moves index up by one
+            play();
+            setTask(descriptionArray[index]);
+            setIndex(index + 1);
           }
-
-          setTime((prevTime) => prevTime - 1); // updates time
+          setTime((prevTime) => prevTime - 1);
         }
       }, 1000);
     } else {

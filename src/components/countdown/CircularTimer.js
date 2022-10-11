@@ -32,25 +32,22 @@ const Wrapper = styled.div`
   }
 `;
 
-
 function CircularTimer(props) {
-
   return (
     <Wrapper>
-      <div className="circulartimer">
-      <CountdownCircleTimer
-        className="test"
-        key={props.reset}
-        isPlaying={props.isPlaying}
-        duration={props.totalDuration}
-        colors={'#DDC7CB'}
-        trailColor={"#142228"}
-        size="300"
-        strokeWidth="20"
-        rotation={'counterclockwise'}
-      >
-      </CountdownCircleTimer>
-      <small className='description'>{props.description}</small>
+      <div className='circulartimer'>
+        <CountdownCircleTimer
+          className='test'
+          key={props.reset}
+          isPlaying={props.isPlaying}
+          duration={props.totalDuration}
+          colors={'#DDC7CB'}
+          trailColor={'#142228'}
+          size='300'
+          strokeWidth='20'
+          rotation={'counterclockwise'}
+        ></CountdownCircleTimer>
+        <small className='description'>{props.description}</small>
       </div>
     </Wrapper>
   );

@@ -19,6 +19,7 @@ const Wrapper = styled.nav`
     justify-content: space-between;
     align-items: center;
     height: 4rem;
+    padding-top: 1rem
   }
 
   .mobilenavlogo {
